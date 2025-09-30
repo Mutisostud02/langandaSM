@@ -128,7 +128,7 @@ function App() {
                               style={{
                                 backgroundImage: `url(${a.image || fallbackImg})`,
                                 backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundPosition: "center 15%",
                               }}
                             >
                               <div className="hero-overlay">
@@ -219,9 +219,9 @@ function App() {
                     </div>
 
                     <div className="arena-card">
-                      <img src="/arena.jpg" alt="JW Sport Arena" />
+                      <img src="/arena.jpg" alt="Laganda Sports Arena" />
                       <div className="card-content">
-                        <h3>JW Sport Arena</h3>
+                        <h3>Laganda Sports Arena</h3>
                         <p>State-of-the-art training facility</p>
                         <p>Professional equipment and coaching</p>
                       </div>
@@ -247,7 +247,7 @@ function App() {
             <p>CEO - Robert Hafredal</p>
             <p>info@lagandasportsmanagement.com</p>
           </div>
-          <p className="footer-copy">© Copyright 2023. All Rights Reserved.</p>
+          <p className="footer-copy">© Copyright 2015. All Rights Reserved.</p>
         </div>
       </footer>
     </>

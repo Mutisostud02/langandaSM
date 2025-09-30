@@ -471,7 +471,7 @@ img[loading="lazy"].loaded {
 /* Optimize hero images */
 .hero-bg {
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
   will-change: transform;
 }

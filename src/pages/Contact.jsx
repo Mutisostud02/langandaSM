@@ -52,9 +52,9 @@ export default function Contact() {
               </div>
 
               <div className="arena-card">
-                <img src="/arena.jpg" alt="JW Sport Arena" />
+                <img src="/arena.jpg" alt="Laganda Sports Arena" />
                 <div className="card-content">
-                  <h3>JW Sport Arena</h3>
+                  <h3>Laganda Sports Arena</h3>
                   <p>State-of-the-art training facility</p>
                   <p>Professional equipment and coaching</p>
                 </div>
