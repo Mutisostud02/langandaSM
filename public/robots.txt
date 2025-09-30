@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lagandasportsmanagement.com/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important pages
+Allow: /athletes/
+Allow: /about/
+Allow: /contact/
+
+# Crawl delay
+Crawl-delay: 1

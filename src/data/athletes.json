@@ -1,0 +1,157 @@
+[
+  {
+    "name": "Adam Carlen",
+    "team": "IFK Göteborg",
+    "image": "/athletes/adam-carlen.jpg"
+  },
+  {
+    "name": "Alva Selerud",
+    "team": "BK Häcken",
+    "image": "/athletes/alva-selerud.jpg"
+  },
+  {
+    "name": "Anton Lindholm",
+    "team": "SC Bern",
+    "image": "/athletes/anton-lindholm.jpg"
+  },
+  {
+    "name": "Calle Rosén",
+    "team": "Colorado Avalanche",
+    "image": "/athletes/calle-rosen.jpg"
+  },
+  {
+    "name": "Emil Djuse",
+    "team": "SC Rapperswil-Jona Lakers",
+    "image": "/athletes/emil-djuse.jpg"
+  },
+  {
+    "name": "Emilia Larsson",
+    "team": "FC Rosengård",
+    "image": "/athletes/emilia-larsson.jpg"
+  },
+  {
+    "name": "Eric Smith",
+    "team": "FC St. Pauli",
+    "image": "/athletes/eric-smith.jpg"
+  },
+  {
+    "name": "Eva Nyström",
+    "team": "West Ham United",
+    "image": "/athletes/eva-nystrom.jpg"
+  },
+  {
+    "name": "Felicia Schröder",
+    "team": "BK Häcken",
+    "image": "/athletes/felicia-schroder.jpeg"
+  },
+  {
+    "name": "Filip Gustavsson",
+    "team": "Minnesota Wild",
+    "image": "/athletes/filip-gustavsson.jpg"
+  },
+  {
+    "name": "Filip Larsson",
+    "team": "Pittsburgh Penguins",
+    "image": "/athletes/filip-larsson.jpg"
+  },
+  {
+    "name": "Gustaf Lagerbielke",
+    "team": "F.C. Twente",
+    "image": "/athletes/gustaf-lagerbielke.jpg"
+  },
+  {
+    "name": "Helge Grans",
+    "team": "Philadelphia Flyers",
+    "image": "/athletes/helge-grans.jpg"
+  },
+  {
+    "name": "Isak Jansson",
+    "team": "SK Rapid Wien",
+    "image": "/athletes/isak-jansson.jpg"
+  },
+  {
+    "name": "Jacob Bergström",
+    "team": "Mjällby AIF",
+    "image": "/athletes/jacob-bergstrom.png"
+  },
+  {
+    "name": "Jelena Čanković",
+    "team": "Brighton Hova &#038; Albion FC",
+    "image": "/athletes/jelena-cankovic.jpg"
+  },
+  {
+    "name": "Jesper Fast",
+    "team": "Carolina Hurricanes",
+    "image": "/athletes/jesper-fast.jpeg"
+  },
+  {
+    "name": "Jimi Dos Reis Nikko",
+    "team": "US Lecce",
+    "image": "/athletes/jimi-dos-reis-nikko.jpg"
+  },
+  {
+    "name": "Magnus Hellberg",
+    "team": "Dallas Stars",
+    "image": "/athletes/magnus-hellberg.jpg"
+  },
+  {
+    "name": "Mattias Ekholm Björnstad",
+    "team": "Edmonton Oilers",
+    "image": "/athletes/mattias-ekholm-bjornstad.jpg"
+  },
+  {
+    "name": "Paulina Nyström",
+    "team": "BK Häcken",
+    "image": "/athletes/paulina-nystrom.png"
+  },
+  {
+    "name": "Pauline Hammarlund",
+    "team": "Djurgårdens IF",
+    "image": "/athletes/pauline-hammarlund.jpeg"
+  },
+  {
+    "name": "Pierre-Édouard Bellemare",
+    "team": "Seattle Kraken",
+    "image": "/athletes/pierre-edouard-bellemare.jpg"
+  },
+  {
+    "name": "Pontus Almqvist",
+    "team": "Parma",
+    "image": "/athletes/pontus-almqvist.jpg"
+  },
+  {
+    "name": "Sabrina D’Angelo",
+    "team": "Aston Villa FC",
+    "image": "/athletes/sabrina-d-angelo.jpg"
+  },
+  {
+    "name": "Simon Lundmark",
+    "team": "Winnipeg Jets",
+    "image": "/athletes/simon-lundmark.jpg"
+  },
+  {
+    "name": "Simon Ryfors",
+    "team": "HC Davos",
+    "image": "/athletes/simon-ryfors.jpg"
+  },
+  {
+    "name": "Tove Almqvist",
+    "team": "Djurgårdens IF",
+    "image": "/athletes/tove-almqvist.jpg"
+  },
+  {
+    "name": "Viktor Arvidsson",
+    "team": "Edmonton Oilers",
+    "image": "/athletes/viktor-arvidsson.jpg"
+  },
+  {
+    "name": "Viktor Johansson",
+    "team": "Stoke City FC",
+    "image": "/athletes/viktor-johansson.jpg"
+  },
+  {
+    "name": "Wilma Leidhammar",
+    "team": "IFK Norrköping",
+    "image": "/athletes/wilma-leidhammar.jpg"
+  }
+]
