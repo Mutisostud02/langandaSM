@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AthleteDetail from "./pages/AthleteDetail";
 import PerformanceMonitor from "./components/PerformanceMonitor";
+import Services from "./pages/Services";
 
 function App() {
   const [athletesHome, setAthletesHome] = useState([]);
@@ -77,10 +78,13 @@ function App() {
                 <Link to="/">Start</Link>
               </li>
               <li>
-                <Link to="/athletes">Athletes</Link>
+                <Link to="/services">Services</Link>
               </li>
               <li>
                 <Link to="/about">About us</Link>
+              </li>
+              <li>
+                <Link to="/athletes">Athletes</Link>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
@@ -100,7 +104,46 @@ function App() {
           path="/"
           element={
             <main>
-              <section id="start" className="hero">
+              {/* Intro hero header */}
+              <section id="home-hero" className="home-hero">
+                <div className="container">
+                  <h1>Laganda Sports Management</h1>
+                  <p className="hero-lead">
+                    We represent world-class athletes with personal, end-to-end management —
+                    from competition planning and brand partnerships to media and logistics.
+                  </p>
+                  <div className="hero-actions">
+                    <Link className="button button--primary" to="/services">Our Services</Link>
+                  </div>
+                </div>
+              </section>
+
+              {/* Key stats / values strip */}
+              <section className="home-stats">
+                <div className="container">
+                  <div className="home-stats-grid">
+                    <div className="stat-card">
+                      <div className="stat-value">2004</div>
+                      <div className="stat-label">Founded</div>
+                    </div>
+                    <div className="stat-card">
+                      <div className="stat-value">Global</div>
+                      <div className="stat-label">Competition Network</div>
+                    </div>
+                    <div className="stat-card">
+                      <div className="stat-value">Elite</div>
+                      <div className="stat-label">Olympic & World Medalists</div>
+                    </div>
+                    <div className="stat-card">
+                      <div className="stat-value">Malmö</div>
+                      <div className="stat-label">Sweden HQ</div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Athlete slider */}
+              <section id="start" className="hero home-slider">
                 <div className="container">
                   <h1 className="visually-hidden">Laganda Sports Management</h1>
                   <div className="hero-carousel">
@@ -120,66 +163,60 @@ function App() {
                     >
                       {(athletesHome.slice(0, 4).length
                         ? athletesHome.slice(0, 4)
-                        : []).map((a) => {
-                        const slug = toSlug(a.name);
-                        return (
-                          <SwiperSlide key={a.name}>
-                            <article
-                              className="hero-slide hero-bg"
-                              style={{
-                                backgroundImage: `url(${a.image || fallbackImg})`,
-                                backgroundSize: "cover",
-                                backgroundPosition: "center 15%",
-                              }}
-                            >
-                              <div className="hero-overlay">
-                                <h2>{a.name}</h2>
-                                {a.team && <p>{a.team}</p>}
-                              </div>
-                            </article>
-                          </SwiperSlide>
-                        );
-                      })}
+                        : []).map((a, idx) => (
+                        <SwiperSlide key={a.name}>
+                          <article
+                            className="hero-slide hero-bg"
+                            style={{
+                              backgroundImage: `url(${a.image || fallbackImg})`,
+                              backgroundSize: "cover",
+                              backgroundPosition: "center 15%",
+                            }}
+                          >
+                            <div className="hero-overlay">
+                              <h2>{["Elite Sports Management", "Global Network", "Personal Representation", "Long-term Partnerships"][idx % 4]}</h2>
+                              <p>Dedicated to elevating performance on and off the field.</p>
+                            </div>
+                          </article>
+                        </SwiperSlide>
+                      ))}
                     </Swiper>
                   </div>
                 </div>
               </section>
 
-              <section id="athletes" className="athletes">
+              {/* Compact Services strip */}
+              <section className="home-services">
                 <div className="container">
-                  <div className="athletes-grid">
-                    {loading && <p>Loading athletes...</p>}
-                    {error && !loading && (
-                      <p className="error" role="alert">{error}</p>
-                    )}
-                    {athletesHome.slice(0, 4).map((a) => {
-                      const slug = toSlug(a.name);
-                      const src = a.image || fallbackImg;
-                      return (
-                        <Link key={a.name} to={`/athletes/${slug}`} className="athlete-card--row">
-                          <div className="athlete-media">
-                            <img
-                              src={src}
-                              alt={a.name}
-                              onError={(e) => {
-                                e.currentTarget.src = fallbackImg;
-                              }}
-                            />
-                          </div>
-                          <div className="athlete-info">
-                            <h2>{a.name}</h2>
-                            {a.team && (
-                              <p className="athlete-discipline">{a.team}</p>
-                            )}
-                          </div>
-                        </Link>
-                      );
-                    })}
+                  <div className="home-services-grid">
+                    <article className="home-service">
+                      <h3>Event Placement</h3>
+                      <p>Strategic meet selection and scheduling to maximize performance and exposure.</p>
+                    </article>
+                    <article className="home-service">
+                      <h3>Sponsorships</h3>
+                      <p>Brand alignment, negotiations, and long-term partnerships with leading companies.</p>
+                    </article>
+                    <article className="home-service">
+                      <h3>Media & Support</h3>
+                      <p>Media coordination, medical/performance resources, and global travel logistics.</p>
+                    </article>
                   </div>
                   <div className="actions">
-                    <Link className="button" to="/athletes">
-                      ALL ATHLETES
-                    </Link>
+                    <Link className="button button--outline" to="/services">Explore Services</Link>
+                  </div>
+                </div>
+              </section>
+
+              {/* Subtle Athletes CTA */}
+              <section className="home-athletes-cta">
+                <div className="container">
+                  <div className="home-cta-row">
+                    <h2>Athletes</h2>
+                    <p className="section-subtitle">Meet the athletes we proudly represent.</p>
+                    <div className="actions">
+                      <Link className="button button--outline" to="/athletes">View Athletes</Link>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -191,6 +228,9 @@ function App() {
                     <div>
                       <h3>Laganda Sports Management</h3>
                     </div>
+                  </div>
+                  <div className="actions">
+                    <Link className="button button--primary" to="/contact">Contact Us</Link>
                   </div>
                 </div>
               </section>
@@ -235,6 +275,7 @@ function App() {
         />
         <Route path="/athletes" element={<Athletes />} />
         <Route path="/athletes/:slug" element={<AthleteDetail />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
