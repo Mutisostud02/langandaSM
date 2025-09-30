@@ -458,6 +458,8 @@ img {
   display: block;
 }
 
+/* (theme toggle removed) */
+
 /* Lazy loading for images */
 img[loading="lazy"] {
   opacity: 0;

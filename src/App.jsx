@@ -36,6 +36,7 @@ function App() {
     };
   }, []);
 
+
   function toSlug(name) {
     return name
       .normalize("NFD")
