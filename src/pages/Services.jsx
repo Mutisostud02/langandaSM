@@ -23,7 +23,7 @@ export default function Services() {
               Elite, personal, and global. We manage the details so athletes can focus on performance.
             </p>
             <div className="section-actions">
-              <a className="button button--outline" href="/contact">Talk to us</a>
+              <a className="button button--primary" href="/contact">Talk to us</a>
             </div>
           </header>
 

@@ -22,45 +22,7 @@ export default function Contact() {
       <section className="contact">
         <div className="container">
           <h1>Contact</h1>
-          <div className="contact-layout">
-            <div className="contact-info">
-              <h2>Laganda Sports Management</h2>
-            </div>
-          </div>
-
           <div className="contact-main-layout">
-            <div className="image-cards-sidebar">
-              <div className="director-card">
-                <div className="director-media">
-                  <img
-                    src="/jwdirector.jpg"
-                    alt="Laganda Sports Management Director"
-                  />
-                </div>
-                <div className="card-content">
-                  <h3>Robert Hafredal</h3>
-                  <p>Chief Executive Officer</p>
-                  <p>
-                    <a href="tel:+46402086122">Tel : - +46 40 208 61 22</a>
-                  </p>
-                  <p>
-                    <a href="mailto:info@lagandasportsmanagement.com">
-                      info@lagandasportsmanagement.com
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="arena-card">
-                <img src="/arena.jpg" alt="Laganda Sports Arena" />
-                <div className="card-content">
-                  <h3>Laganda Sports Arena</h3>
-                  <p>State-of-the-art training facility</p>
-                  <p>Professional equipment and coaching</p>
-                </div>
-              </div>
-            </div>
-
             <div className="contact-form-container">
               <form className="contact-form" onSubmit={handleMailto}>
                 <div className="form-row">

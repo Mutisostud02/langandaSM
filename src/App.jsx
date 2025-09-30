@@ -112,9 +112,7 @@ function App() {
                     We represent world-class athletes with personal, end-to-end management —
                     from competition planning and brand partnerships to media and logistics.
                   </p>
-                  <div className="hero-actions">
-                    <Link className="button button--primary" to="/services">Our Services</Link>
-                  </div>
+                  {/* Hero CTA removed per request */}
                 </div>
               </section>
 
@@ -185,6 +183,19 @@ function App() {
                 </div>
               </section>
 
+              {/* Subtle Athletes CTA moved directly below slider */}
+              <section className="home-athletes-cta">
+                <div className="container">
+                  <div className="home-cta-row">
+                    <h2>Athletes</h2>
+                    <p className="section-subtitle">Meet the athletes we proudly represent.</p>
+                    <div className="actions">
+                      <Link className="button button--primary" to="/athletes">View Athletes</Link>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
               {/* Compact Services strip */}
               <section className="home-services">
                 <div className="container">
@@ -203,73 +214,12 @@ function App() {
                     </article>
                   </div>
                   <div className="actions">
-                    <Link className="button button--outline" to="/services">Explore Services</Link>
+                    <Link className="button button--primary" to="/services">Explore Services</Link>
                   </div>
                 </div>
               </section>
 
-              {/* Subtle Athletes CTA */}
-              <section className="home-athletes-cta">
-                <div className="container">
-                  <div className="home-cta-row">
-                    <h2>Athletes</h2>
-                    <p className="section-subtitle">Meet the athletes we proudly represent.</p>
-                    <div className="actions">
-                      <Link className="button button--outline" to="/athletes">View Athletes</Link>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section id="contact" className="contact">
-                <div className="container">
-                  <h2>Contact</h2>
-                  <div className="contact-grid">
-                    <div>
-                      <h3>Laganda Sports Management</h3>
-                    </div>
-                  </div>
-                  <div className="actions">
-                    <Link className="button button--primary" to="/contact">Contact Us</Link>
-                  </div>
-                </div>
-              </section>
-
-              <section className="image-cards">
-                <div className="container">
-                  <div className="cards-grid">
-                    <div className="director-card">
-                      <div className="director-media">
-                        <img
-                          src="/jwdirector.jpg"
-                          alt="Laganda Sports Management Director"
-                        />
-                      </div>
-                      <div className="card-content">
-                        <h3>Robert Hafredal</h3>
-                        <p>Chief Executive Officer</p>
-                        <p>
-                          <a href="tel:+46402086122">Tel : - +46 40 208 61 22</a>
-                        </p>
-                        <p>
-                          <a href="mailto:info@lagandasportsmanagement.com">
-                            info@lagandasportsmanagement.com
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="arena-card">
-                      <img src="/arena.jpg" alt="Laganda Sports Arena" />
-                      <div className="card-content">
-                        <h3>Laganda Sports Arena</h3>
-                        <p>State-of-the-art training facility</p>
-                        <p>Professional equipment and coaching</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+              {/* Contact and image cards section removed per request */}
             </main>
           }
         />
@@ -288,6 +238,15 @@ function App() {
             <p>Tel : - +46 40 208 61 22</p>
             <p>CEO - Robert Hafredal</p>
             <p>info@lagandasportsmanagement.com</p>
+          </div>
+          <div className="footer-partner">
+            <p>
+              <a href="https://amasportsagency.com/en/" target="_blank" rel="noopener noreferrer">
+                Laganda Sports Management
+              </a>
+            </p>
+            <p>Org. no: 556679-2627</p>
+            <p>VAT: SE556679262701</p>
           </div>
           <p className="footer-copy">© Copyright 2015. All Rights Reserved.</p>
         </div>
