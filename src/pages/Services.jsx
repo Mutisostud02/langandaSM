@@ -1,4 +1,5 @@
 import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 export default function Services() {
   const pageTitle = "Services - Laganda Sports Management";
@@ -25,7 +26,7 @@ export default function Services() {
               <h1>Services</h1>
               <p className="services-hero-sub">Elite, personal, and global. We manage the details so athletes can focus on performance.</p>
               <div className="section-actions">
-                <a className="button button--primary" href="/contact">Talk to us</a>
+                <Link className="button button--primary" to="/contact">Talk to us</Link>
               </div>
             </div>
           </div>

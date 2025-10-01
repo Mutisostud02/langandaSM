@@ -51,6 +51,13 @@ function App() {
   const fallbackImg =
     "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop";
 
+  // Helper: close mobile nav and scroll to top when a nav item is selected
+  function closeMobileNav() {
+    const navToggle = document.getElementById("nav-toggle");
+    if (navToggle && navToggle.checked) navToggle.checked = false;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   // Use head images for the home slider
   const headSlides = [
     "/athletes/claudio-schwarz-head.jpg",
@@ -82,19 +89,19 @@ function App() {
           <nav className="main-nav" aria-label="Primary">
             <ul>
               <li>
-                <Link to="/">Start</Link>
+                <Link to="/" onClick={closeMobileNav}>Start</Link>
               </li>
               <li>
-                <Link to="/services">Services</Link>
+                <Link to="/services" onClick={closeMobileNav}>Services</Link>
               </li>
               <li>
-                <Link to="/about">About us</Link>
+                <Link to="/about" onClick={closeMobileNav}>About us</Link>
               </li>
               <li>
-                <Link to="/athletes">Athletes</Link>
+                <Link to="/athletes" onClick={closeMobileNav}>Athletes</Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact" onClick={closeMobileNav}>Contact</Link>
               </li>
             </ul>
           </nav>
