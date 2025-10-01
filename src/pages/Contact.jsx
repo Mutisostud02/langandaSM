@@ -24,25 +24,27 @@ export default function Contact() {
           <h1>Contact</h1>
           <div className="contact-flex">
             <div className="contact-media">
-              <img
-                src={withBase('/athletes/claudio-schwarz-head.jpg')}
-                alt="Contact visual"
-                loading="lazy"
-                className="contact-media-img"
-                onLoad={(e) => e.currentTarget.classList.add('loaded')}
-              />
-              {/* Contact details under image */}
-              <div className="contact-info">
-                <address>
-                  <strong>Laganda Sports Management</strong><br />
-                  Eric Perssons väg 5<br />
-                  217 62 Malmö, Sweden
-                </address>
-                <p style={{ marginTop: '8px' }}>
-                  Tel: <a href="tel:+46402086122">+46 40 208 61 22</a><br />
-                  Email: <a href="mailto:info@lagandasportsmanagement.com">info@lagandasportsmanagement.com</a>
-                </p>
-              </div>
+              {/* CEO card placed where the image used to be */}
+              <article className="director-card ceo-card" style={{ marginTop: '0' }}>
+                <div className="director-media">
+                  <img
+                    src={withBase('/ceo.jpg')}
+                    alt="CEO: David Carlborg"
+                    loading="lazy"
+                    onLoad={(e) => e.currentTarget.classList.add('loaded')}
+                  />
+                </div>
+                <div className="card-content">
+                  <h3>David Carlborg</h3>
+                  <p>CEO</p>
+                  <p>
+                    Email: <a href="mailto:info@lagandasportsmanagement.com">info@lagandasportsmanagement.com</a>
+                  </p>
+                  <p>
+                    Tel: <a href="tel:+46402086122">+46 40 208 61 22</a>
+                  </p>
+                </div>
+              </article>
             </div>
             <div className="contact-form-container">
               <form className="contact-form" onSubmit={handleMailto}>

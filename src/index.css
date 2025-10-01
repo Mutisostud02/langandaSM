@@ -490,12 +490,22 @@ address { color: var(--muted); font-style: normal; }
 .contact-page h1 { font-size: 28px; margin-bottom: 16px; animation: fadeInUp 0.8s ease-out; }
 .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
 .contact-page .contact-layout { grid-template-columns: 1fr; }
+.contact-page .contact .container { width: min(1430px, 95%); }
 .contact-page .contact-main-layout { display: flex; gap: 48px; align-items: flex-start; margin-top: 24px; }
 .contact-page .image-cards-sidebar { flex: 0 0 300px; }
 .contact-page .contact-form-container { flex: 1; }
 .contact-page .director-card, .contact-page .arena-card { width: 100%; margin-bottom: 16px; }
 .contact-page .director-media img { width: 50%; height: 100px; }
 .contact-page .arena-card img { height: 180px; }
+
+/* Improve CEO image crop to keep face fully visible */
+.contact-page .ceo-card .director-media img { object-position: top center; height: 140px; }
+
+/* CEO card alignment under heading with reasonable max width */
+.contact-page .ceo-card { width: 100%; max-width: 520px; margin-inline: 0; }
+@media (max-width: 900px) {
+  .contact-page .ceo-card { width: 100%; }
+}
 
 /* New contact flex layout with image */
 .contact-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-top: 16px; }
