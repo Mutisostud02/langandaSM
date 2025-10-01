@@ -201,6 +201,11 @@ section { scroll-margin-top: calc(var(--header-offset) + 8px); }
   .home-cta-img { height: 280px; }
 }
 
+/* Reduce extra top spacing before hero heading on mobile */
+@media (max-width: 768px) {
+  .home-hero { padding: 16px 0 20px; }
+}
+
 @media (max-width: 800px) {
   .home-cta-row--with-images { grid-template-columns: 1fr; }
   .home-cta-img { height: 200px; }

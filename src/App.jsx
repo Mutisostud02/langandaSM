@@ -204,50 +204,15 @@ function App() {
                 </div>
               </section>
 
-              {/* Athletes CTA with flanking images (dynamic from dataset) */}
+              {/* Athletes CTA without flanking images */}
               <section className="home-athletes-cta">
                 <div className="container">
-                  <div className="home-cta-row home-cta-row--with-images">
-                    {(() => {
-                      const withImages = (athletesHome || []).filter(a => a?.image);
-                      const left = withBase(withImages[0]?.image || "/athletes/claudio-schwarz-head.jpg");
-                      const leftAlt = withImages[0]?.name || "Featured athlete";
-                      const right = withBase(withImages[1]?.image || "/athletes/tsimur-asayonak-head.jpg");
-                      const rightAlt = withImages[1]?.name || "Athlete spotlight";
-                      return (
-                        <>
-                          <div className="home-cta-img-wrap left">
-                            <img
-                              src={left}
-                              alt={leftAlt}
-                              loading="lazy"
-                              className="home-cta-img"
-                              width="420"
-                              height="280"
-                              onError={(e) => { if (e.currentTarget.src !== fallbackImg) e.currentTarget.src = fallbackImg; }}
-                            />
-                          </div>
-                          <div className="home-cta-center">
-                            <h2>Athletes</h2>
-                            <p className="section-subtitle">Meet the athletes we proudly represent.</p>
-                            <div className="actions">
-                              <Link className="button button--primary" to="/athletes">View Athletes</Link>
-                            </div>
-                          </div>
-                          <div className="home-cta-img-wrap right">
-                            <img
-                              src={right}
-                              alt={rightAlt}
-                              loading="lazy"
-                              className="home-cta-img"
-                              width="420"
-                              height="280"
-                              onError={(e) => { if (e.currentTarget.src !== fallbackImg) e.currentTarget.src = fallbackImg; }}
-                            />
-                          </div>
-                        </>
-                      );
-                    })()}
+                  <div className="home-cta-row">
+                    <h2>Athletes</h2>
+                    <p className="section-subtitle">Meet the athletes we proudly represent.</p>
+                    <div className="actions">
+                      <Link className="button button--primary" to="/athletes">View Athletes</Link>
+                    </div>
                   </div>
                 </div>
               </section>
