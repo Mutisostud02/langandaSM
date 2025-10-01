@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/logo/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png" />
+
     <link rel="manifest" href="/logo/site.webmanifest" />
     
     <!-- Primary Meta Tags -->
@@ -23,7 +20,7 @@
     <meta property="og:url" content="https://lagandasportsmanagement.com/" />
     <meta property="og:title" content="Laganda Sports Management - Elite Sports Management & Representation" />
     <meta property="og:description" content="Representing world-class athletes including Olympic champions, world record holders, and elite performers across multiple sports disciplines." />
-    <meta property="og:image" content="/logo/android-chrome-512x512.png" />
+
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
     <meta property="og:site_name" content="Laganda Sports Management" />
@@ -34,7 +31,7 @@
     <meta property="twitter:url" content="https://lagandasportsmanagement.com/" />
     <meta property="twitter:title" content="Laganda Sports Management - Elite Sports Management & Representation" />
     <meta property="twitter:description" content="Representing world-class athletes including Olympic champions, world record holders, and elite performers across multiple sports disciplines." />
-    <meta property="twitter:image" content="/logo/android-chrome-512x512.png" />
+
     
     <!-- Additional SEO Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -54,37 +51,70 @@
       rel="stylesheet"
     />
     
-    <!-- Structured Data for Organization -->
+    <!-- Structured Data for Google Business & SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SportsOrganization",
+      "@type": ["SportsOrganization", "LocalBusiness"],
+      "@id": "https://lagandasportsmanagement.com/#organization",
       "name": "Laganda Sports Management",
-      "description": "Elite sports management and athlete representation company",
+      "alternateName": "Laganda SM",
+      "description": "Elite sports management and athlete representation company representing world-class Olympic champions and professional athletes",
       "url": "https://lagandasportsmanagement.com",
       "logo": "https://lagandasportsmanagement.com/logo/android-chrome-512x512.png",
       "image": "https://lagandasportsmanagement.com/logo/android-chrome-512x512.png",
+      "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Eric Perssons väg 5",
         "addressLocality": "Malmö",
+        "addressRegion": "Skåne",
         "postalCode": "217 62",
         "addressCountry": "SE"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+46 40 208 61 22",
-        "contactType": "customer service",
-        "email": "info@lagandasportsmanagement.com"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "55.6050",
+        "longitude": "13.0038"
       },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+46-40-208-61-22",
+          "contactType": "customer service",
+          "email": "info@lagandasportsmanagement.com",
+          "areaServed": "Worldwide",
+          "availableLanguage": ["English", "Swedish"]
+        }
+      ],
       "founder": {
         "@type": "Person",
-        "name": "Robert Hafredal",
-        "jobTitle": "Chief Executive Officer"
+        "name": "Robert Hafredal"
+      },
+      "employee": {
+        "@type": "Person",
+        "name": "David Carlborg",
+        "jobTitle": "Chief Executive Officer",
+        "email": "info@lagandasportsmanagement.com",
+        "telephone": "+46-40-208-61-22"
       },
       "foundingDate": "2004",
       "numberOfEmployees": "10-50",
-      "sport": ["Athletics", "Swimming", "Pole Vault", "Discus Throw", "Track and Field"]
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "1"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      },
+      "knowsAbout": ["Sports Management", "Athlete Representation", "Olympic Athletes", "Professional Sports", "Athletics", "Swimming", "Track and Field"],
+      "slogan": "Elite, personal, and global sports management",
+      "sport": ["Athletics", "Swimming", "Pole Vault", "Discus Throw", "Track and Field", "High Jump", "Long Jump"],
+      "sameAs": [
+        "https://lagandasportsmanagement.com"
+      ]
     }
     </script>
   </head>

@@ -1,99 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://lagandasportsmanagement.com/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/athletes</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/services</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/about</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/contact</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Individual athlete pages -->
   <url>
     <loc>https://lagandasportsmanagement.com/athletes/armand-mondo-duplantis</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/athletes/sarah-sjostrom</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/athletes/jakob-ingebrigtsen</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/athletes/sandra-elkasevic</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/athletes/ivana-spanovic</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/athletes/mutaz-barshim</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/athletes/nicola-olyslagers</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/athletes/rhasidat-adeleke</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/athletes/andreas-almgren</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/athletes/henrik-ingebrigtsen</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lagandasportsmanagement.com/athletes/vidar-johansson</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
