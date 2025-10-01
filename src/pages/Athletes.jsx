@@ -6,12 +6,17 @@ export default function Athletes() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
+  function withBase(path) {
+    const base = (import.meta?.env?.BASE_URL || "/").replace(/\/$/, "/");
+    return `${base}${String(path).replace(/^\//, "")}`;
+  }
+
 
   useEffect(() => {
     let isMounted = true;
     async function load() {
       try {
-        const res = await fetch(`/athletes.json`, { cache: "no-store" });
+        const res = await fetch(withBase(`/athletes.json`), { cache: "no-store" });
         if (!res.ok) throw new Error(`Failed to load data: ${res.status}`);
         const json = await res.json();
         if (isMounted) setAthletes(Array.isArray(json) ? json : []);
@@ -60,7 +65,8 @@ export default function Athletes() {
           <div className="athletes-grid athletes-grid--cards">
             {filtered.map((a) => {
               const slug = toSlug(a.name);
-              const src = a.image || `/athletes/${slug}.jpg`;
+              const raw = a.image || `/athletes/${slug}.jpg`;
+              const src = withBase(raw);
               return (
                 <Link
                   key={a.name}
@@ -72,6 +78,9 @@ export default function Athletes() {
                       src={src}
                       alt={a.name}
                       loading="lazy"
+                      onLoad={(e) => {
+                        e.currentTarget.classList.add("loaded");
+                      }}
                       onError={(e) => {
                         if (e.currentTarget.src !== fallbackImg) e.currentTarget.src = fallbackImg;
                       }}
@@ -80,6 +89,15 @@ export default function Athletes() {
                   <div className="athlete-meta">
                     <h2>{a.name}</h2>
                     {a.team && <p className="athlete-team">{a.team}</p>}
+                    {Array.isArray(a.achievements) && a.achievements.length > 0 && (
+                      <div className="athlete-achievements-card">
+                        {a.achievements.slice(0, 3).map((ach) => (
+                          <div key={ach.title} className="achievement-line">
+                            <strong>{ach.title}:</strong> <span>{ach.details}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </Link>
               );
@@ -93,4 +111,5 @@ export default function Athletes() {
     </main>
   );
 }
+
 

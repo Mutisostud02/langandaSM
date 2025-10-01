@@ -50,6 +50,13 @@ function App() {
 
   const fallbackImg =
     "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop";
+
+  // Use head images for the home slider
+  const headSlides = [
+    "/athletes/claudio-schwarz-head.jpg",
+    "/athletes/girish-sangammanavar-head.jpg",
+    "/athletes/tsimur-asayonak-head.jpg",
+  ];
   return (
     <>
       <PerformanceMonitor />
@@ -159,14 +166,12 @@ function App() {
                       navigation={true}
                       loop={true}
                     >
-                      {(athletesHome.slice(0, 4).length
-                        ? athletesHome.slice(0, 4)
-                        : []).map((a, idx) => (
-                        <SwiperSlide key={a.name}>
+                      {(headSlides.length ? headSlides : [fallbackImg]).map((img, idx) => (
+                        <SwiperSlide key={idx}>
                           <article
                             className="hero-slide hero-bg"
                             style={{
-                              backgroundImage: `url(${a.image || fallbackImg})`,
+                              backgroundImage: `url(${img || fallbackImg})`,
                               backgroundSize: "cover",
                               backgroundPosition: "center 15%",
                             }}

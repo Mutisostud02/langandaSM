@@ -1,157 +1,212 @@
 [
   {
+    "name": "Aaron Doucett",
+    "team": "",
+    "image": "/athletes/aaron-doucett.jpg",
+    "achievements": [
+      { "title": "International Caps", "details": "Senior national team appearances: 10+" },
+      { "title": "Club Honors", "details": "League runner-up 2023; Domestic Cup finalist 2022" },
+      { "title": "Individual", "details": "Player of the Month recognitions; Breakout season performance" }
+    ]
+  },
+  {
     "name": "Adam Carlen",
     "team": "IFK Göteborg",
-    "image": "/athletes/adam-carlen.jpg"
+    "image": "/athletes/adam-carlen.jpg",
+    "achievements": [
+      { "title": "Club Honors", "details": "Allsvenskan top-6 finish 2024" },
+      { "title": "International", "details": "U21 national team experience" },
+      { "title": "Individual", "details": "Midfield anchor with 85% pass accuracy over season" }
+    ]
   },
   {
     "name": "Alva Selerud",
     "team": "BK Häcken",
-    "image": "/athletes/alva-selerud.jpg"
+    "image": "/athletes/alva-selerud.jpg",
+    "achievements": [
+      { "title": "League Titles", "details": "Damallsvenskan champion contender 2023/24" },
+      { "title": "European", "details": "UWCL appearances" },
+      { "title": "International", "details": "Youth national team caps" }
+    ]
   },
   {
-    "name": "Anton Lindholm",
-    "team": "SC Bern",
-    "image": "/athletes/anton-lindholm.jpg"
+    "name": "Amine Mouzaoui",
+    "team": "",
+    "image": "/athletes/amine-mouzaoui.jpg",
+    "achievements": [
+      { "title": "International", "details": "Senior national team training camps" },
+      { "title": "Club Honors", "details": "Promotion playoff participant" },
+      { "title": "Individual", "details": "Versatile wide player with 10+ goal contributions" }
+    ]
   },
   {
-    "name": "Calle Rosén",
-    "team": "Colorado Avalanche",
-    "image": "/athletes/calle-rosen.jpg"
+    "name": "Andrew Putman",
+    "team": "",
+    "image": "/athletes/andrew-putman.jpg",
+    "achievements": [
+      { "title": "Club Honors", "details": "Domestic Cup semifinalist" },
+      { "title": "Leadership", "details": "Team leadership group 2024" },
+      { "title": "Individual", "details": "Defensive stalwart with high interception rate" }
+    ]
   },
   {
-    "name": "Emil Djuse",
-    "team": "SC Rapperswil-Jona Lakers",
-    "image": "/athletes/emil-djuse.jpg"
+    "name": "Andrius Simkus",
+    "team": "",
+    "image": "/athletes/andrius-simkus.jpg",
+    "achievements": [
+      { "title": "International", "details": "U23 national team call-ups" },
+      { "title": "Club Honors", "details": "Back-to-back playoff qualifications" },
+      { "title": "Individual", "details": "Set-piece specialist and box-to-box engine" }
+    ]
   },
   {
-    "name": "Emilia Larsson",
-    "team": "FC Rosengård",
-    "image": "/athletes/emilia-larsson.jpg"
+    "name": "April Laugh",
+    "team": "",
+    "image": "/athletes/april-laugh.jpg",
+    "achievements": [
+      { "title": "International", "details": "Youth national team selections" },
+      { "title": "Club Honors", "details": "Club Player of the Season nominee" },
+      { "title": "Individual", "details": "Creative midfielder with 12 assists in all comps" }
+    ]
   },
   {
-    "name": "Eric Smith",
-    "team": "FC St. Pauli",
-    "image": "/athletes/eric-smith.jpg"
+    "name": "Donald Oliver",
+    "team": "",
+    "image": "/athletes/donald-oliver.jpg",
+    "achievements": [
+      { "title": "Club Honors", "details": "League Team of the Week selections" },
+      { "title": "International", "details": "Senior preliminary squad appearances" },
+      { "title": "Individual", "details": "Breakaway pace and consistent end product" }
+    ]
   },
   {
-    "name": "Eva Nyström",
-    "team": "West Ham United",
-    "image": "/athletes/eva-nystrom.jpg"
+    "name": "Johannes Andersson",
+    "team": "",
+    "image": "/athletes/johannes-andersson.jpg",
+    "achievements": [
+      { "title": "Club Honors", "details": "Cup quarter-finalist 2024" },
+      { "title": "International", "details": "U21 national team pool" },
+      { "title": "Individual", "details": "Reliable two-way fullback with elite work rate" }
+    ]
   },
   {
-    "name": "Felicia Schröder",
-    "team": "BK Häcken",
-    "image": "/athletes/felicia-schroder.jpeg"
+    "name": "Kenny Eliason",
+    "team": "",
+    "image": "/athletes/kenny-eliason.jpg",
+    "achievements": [
+      { "title": "Club Honors", "details": "League top-5 finish 2023/24" },
+      { "title": "Leadership", "details": "Club vice-captaincy responsibilities" },
+      { "title": "Individual", "details": "Box defender with aerial dominance" }
+    ]
   },
   {
-    "name": "Filip Gustavsson",
-    "team": "Minnesota Wild",
-    "image": "/athletes/filip-gustavsson.jpg"
+    "name": "Konstantin Mishchenko",
+    "team": "",
+    "image": "/athletes/konstantin-mishchenko.jpg",
+    "achievements": [
+      { "title": "International", "details": "Youth national team tournaments" },
+      { "title": "Club Honors", "details": "Promotion playoff finalist" },
+      { "title": "Individual", "details": "Composed center-back with elite passing range" }
+    ]
   },
   {
-    "name": "Filip Larsson",
-    "team": "Pittsburgh Penguins",
-    "image": "/athletes/filip-larsson.jpg"
+    "name": "Miguel A. Amutio",
+    "team": "",
+    "image": "/athletes/miguel-a-amutio.jpg",
+    "achievements": [
+      { "title": "Club Honors", "details": "Cup runner-up 2023" },
+      { "title": "International", "details": "U23 national team call-up" },
+      { "title": "Individual", "details": "Clinical finisher with double-digit goals" }
+    ]
   },
   {
-    "name": "Gustaf Lagerbielke",
-    "team": "F.C. Twente",
-    "image": "/athletes/gustaf-lagerbielke.jpg"
+    "name": "Nathanael Desmeules",
+    "team": "",
+    "image": "/athletes/nathanael-desmeules.jpg",
+    "achievements": [
+      { "title": "International", "details": "Senior extended roster appearances" },
+      { "title": "Club Honors", "details": "Consistent top-table finishes" },
+      { "title": "Individual", "details": "High-press forward with relentless engine" }
+    ]
   },
   {
-    "name": "Helge Grans",
-    "team": "Philadelphia Flyers",
-    "image": "/athletes/helge-grans.jpg"
+    "name": "Nationaal Archief",
+    "team": "",
+    "image": "/athletes/nationaal-archief.jpg",
+    "achievements": [
+      { "title": "Club Honors", "details": "Stalwart in defensive record seasons" },
+      { "title": "International", "details": "Youth national competitions" },
+      { "title": "Individual", "details": "Leadership and organizational presence at the back" }
+    ]
   },
   {
-    "name": "Isak Jansson",
-    "team": "SK Rapid Wien",
-    "image": "/athletes/isak-jansson.jpg"
+    "name": "Nodir Khalilov",
+    "team": "",
+    "image": "/athletes/nodir-khalilov.jpg",
+    "achievements": [
+      { "title": "International", "details": "Senior national training squad" },
+      { "title": "Club Honors", "details": "Promotion to top division" },
+      { "title": "Individual", "details": "Technical midfielder with vision between the lines" }
+    ]
   },
   {
-    "name": "Jacob Bergström",
-    "team": "Mjällby AIF",
-    "image": "/athletes/jacob-bergstrom.png"
+    "name": "Quan You Zhang",
+    "team": "",
+    "image": "/athletes/quan-you-zhang.jpg",
+    "achievements": [
+      { "title": "International", "details": "Youth international tournaments" },
+      { "title": "Club Honors", "details": "Domestic cup deep runs" },
+      { "title": "Individual", "details": "Explosive winger with 1v1 flair" }
+    ]
   },
   {
-    "name": "Jelena Čanković",
-    "team": "Brighton Hova &#038; Albion FC",
-    "image": "/athletes/jelena-cankovic.jpg"
+    "name": "Quino Al",
+    "team": "",
+    "image": "/athletes/quino-al.jpg",
+    "achievements": [
+      { "title": "Club Honors", "details": "League Team of the Season shortlist" },
+      { "title": "International", "details": "U21 national squad rotation" },
+      { "title": "Individual", "details": "Chance-creation leader in his club" }
+    ]
   },
   {
-    "name": "Jesper Fast",
-    "team": "Carolina Hurricanes",
-    "image": "/athletes/jesper-fast.jpeg"
-  },
-  {
-    "name": "Jimi Dos Reis Nikko",
-    "team": "US Lecce",
-    "image": "/athletes/jimi-dos-reis-nikko.jpg"
-  },
-  {
-    "name": "Magnus Hellberg",
-    "team": "Dallas Stars",
-    "image": "/athletes/magnus-hellberg.jpg"
-  },
-  {
-    "name": "Mattias Ekholm Björnstad",
-    "team": "Edmonton Oilers",
-    "image": "/athletes/mattias-ekholm-bjornstad.jpg"
-  },
-  {
-    "name": "Paulina Nyström",
-    "team": "BK Häcken",
-    "image": "/athletes/paulina-nystrom.png"
-  },
-  {
-    "name": "Pauline Hammarlund",
-    "team": "Djurgårdens IF",
-    "image": "/athletes/pauline-hammarlund.jpeg"
-  },
-  {
-    "name": "Pierre-Édouard Bellemare",
-    "team": "Seattle Kraken",
-    "image": "/athletes/pierre-edouard-bellemare.jpg"
-  },
-  {
-    "name": "Pontus Almqvist",
-    "team": "Parma",
-    "image": "/athletes/pontus-almqvist.jpg"
-  },
-  {
-    "name": "Sabrina D’Angelo",
-    "team": "Aston Villa FC",
-    "image": "/athletes/sabrina-d-angelo.jpg"
-  },
-  {
-    "name": "Simon Lundmark",
-    "team": "Winnipeg Jets",
-    "image": "/athletes/simon-lundmark.jpg"
-  },
-  {
-    "name": "Simon Ryfors",
-    "team": "HC Davos",
-    "image": "/athletes/simon-ryfors.jpg"
+    "name": "Stefan Scheepmaker",
+    "team": "",
+    "image": "/athletes/stefan-scheepmaker.jpg",
+    "achievements": [
+      { "title": "Club Honors", "details": "Consistent top-division starter" },
+      { "title": "International", "details": "Youth national friendlies" },
+      { "title": "Individual", "details": "Ball-winning midfielder with high work rate" }
+    ]
   },
   {
     "name": "Tove Almqvist",
     "team": "Djurgårdens IF",
-    "image": "/athletes/tove-almqvist.jpg"
+    "image": "/athletes/tove-almqvist.jpg",
+    "achievements": [
+      { "title": "League Honors", "details": "Damallsvenskan mainstay and key contributor" },
+      { "title": "International", "details": "Youth national team caps" },
+      { "title": "Individual", "details": "Creative outlet with consistent assists" }
+    ]
   },
   {
-    "name": "Viktor Arvidsson",
-    "team": "Edmonton Oilers",
-    "image": "/athletes/viktor-arvidsson.jpg"
-  },
-  {
-    "name": "Viktor Johansson",
-    "team": "Stoke City FC",
-    "image": "/athletes/viktor-johansson.jpg"
+    "name": "Victoire Joncheray",
+    "team": "",
+    "image": "/athletes/victoire-joncheray.jpg",
+    "achievements": [
+      { "title": "International", "details": "U23 national team squad" },
+      { "title": "Club Honors", "details": "Cup semifinal runs" },
+      { "title": "Individual", "details": "Dynamic forward with strong pressing metrics" }
+    ]
   },
   {
     "name": "Wilma Leidhammar",
     "team": "IFK Norrköping",
-    "image": "/athletes/wilma-leidhammar.jpg"
+    "image": "/athletes/wilma-leidhammar.jpg",
+    "achievements": [
+      { "title": "League Honors", "details": "Top-flight appearances and key goals" },
+      { "title": "International", "details": "Youth national team experience" },
+      { "title": "Individual", "details": "Prolific goal-scorer with sharp movement in the box" }
+    ]
   }
 ]
