@@ -46,7 +46,6 @@ export default function Contact() {
             </div>
             <div className="contact-form-container">
               <form className="contact-form" onSubmit={handleMailto}>
-                <p className="muted" style={{ marginBottom: '8px' }}>Include your name and email in the message below.</p>
                 <div className="form-row">
                   <label htmlFor="message">Message</label>
                   <textarea
