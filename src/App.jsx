@@ -17,11 +17,16 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  function withBase(path) {
+    const base = (import.meta?.env?.BASE_URL || "/").replace(/\/$/, "/");
+    return `${base}${String(path || "").replace(/^\//, "")}`;
+  }
+
   useEffect(() => {
     let isMounted = true;
     async function load() {
       try {
-        const res = await fetch(`/athletes.json`, { cache: "no-store" });
+        const res = await fetch(withBase(`/athletes.json`), { cache: "no-store" });
         if (!res.ok) throw new Error(`Failed to load data: ${res.status}`);
         const json = await res.json();
         if (isMounted) setAthletesHome(Array.isArray(json) ? json : []);
@@ -80,36 +85,38 @@ function App() {
             />
             <span className="logo-text">Laganda Sports Management</span>
           </Link>
-          <input
-            id="nav-toggle"
-            type="checkbox"
-            className="nav-toggle"
-            aria-label="Toggle navigation"
-          />
-          <nav className="main-nav" aria-label="Primary">
-            <ul>
-              <li>
-                <Link to="/" onClick={closeMobileNav}>Start</Link>
-              </li>
-              <li>
-                <Link to="/services" onClick={closeMobileNav}>Services</Link>
-              </li>
-              <li>
-                <Link to="/about" onClick={closeMobileNav}>About us</Link>
-              </li>
-              <li>
-                <Link to="/athletes" onClick={closeMobileNav}>Athletes</Link>
-              </li>
-              <li>
-                <Link to="/contact" onClick={closeMobileNav}>Contact</Link>
-              </li>
-            </ul>
-          </nav>
-          <label className="hamburger" htmlFor="nav-toggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
+          <div className="nav-wrapper">
+            <input
+              id="nav-toggle"
+              type="checkbox"
+              className="nav-toggle"
+              aria-label="Toggle navigation"
+            />
+            <label className="hamburger" htmlFor="nav-toggle" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+            <nav className="main-nav" aria-label="Primary">
+              <ul>
+                <li>
+                  <Link to="/" onClick={closeMobileNav}>Home</Link>
+                </li>
+                <li>
+                  <Link to="/services" onClick={closeMobileNav}>Services</Link>
+                </li>
+                <li>
+                  <Link to="/about" onClick={closeMobileNav}>About us</Link>
+                </li>
+                <li>
+                  <Link to="/athletes" onClick={closeMobileNav}>Athletes</Link>
+                </li>
+                <li>
+                  <Link to="/contact" onClick={closeMobileNav}>Contact</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </header>
 
@@ -126,7 +133,9 @@ function App() {
                     We represent world-class athletes with personal, end-to-end management —
                     from competition planning and brand partnerships to media and logistics.
                   </p>
-                  {/* Hero CTA removed per request */}
+                  <div className="actions" style={{ marginTop: '10px' }}>
+                    <Link className="button button--primary" to="/about">About Us</Link>
+                  </div>
                 </div>
               </section>
 
@@ -195,15 +204,50 @@ function App() {
                 </div>
               </section>
 
-              {/* Subtle Athletes CTA moved directly below slider */}
+              {/* Athletes CTA with flanking images (dynamic from dataset) */}
               <section className="home-athletes-cta">
                 <div className="container">
-                  <div className="home-cta-row">
-                    <h2>Athletes</h2>
-                    <p className="section-subtitle">Meet the athletes we proudly represent.</p>
-                    <div className="actions">
-                      <Link className="button button--primary" to="/athletes">View Athletes</Link>
-                    </div>
+                  <div className="home-cta-row home-cta-row--with-images">
+                    {(() => {
+                      const withImages = (athletesHome || []).filter(a => a?.image);
+                      const left = withBase(withImages[0]?.image || "/athletes/claudio-schwarz-head.jpg");
+                      const leftAlt = withImages[0]?.name || "Featured athlete";
+                      const right = withBase(withImages[1]?.image || "/athletes/tsimur-asayonak-head.jpg");
+                      const rightAlt = withImages[1]?.name || "Athlete spotlight";
+                      return (
+                        <>
+                          <div className="home-cta-img-wrap left">
+                            <img
+                              src={left}
+                              alt={leftAlt}
+                              loading="lazy"
+                              className="home-cta-img"
+                              width="420"
+                              height="280"
+                              onError={(e) => { if (e.currentTarget.src !== fallbackImg) e.currentTarget.src = fallbackImg; }}
+                            />
+                          </div>
+                          <div className="home-cta-center">
+                            <h2>Athletes</h2>
+                            <p className="section-subtitle">Meet the athletes we proudly represent.</p>
+                            <div className="actions">
+                              <Link className="button button--primary" to="/athletes">View Athletes</Link>
+                            </div>
+                          </div>
+                          <div className="home-cta-img-wrap right">
+                            <img
+                              src={right}
+                              alt={rightAlt}
+                              loading="lazy"
+                              className="home-cta-img"
+                              width="420"
+                              height="280"
+                              onError={(e) => { if (e.currentTarget.src !== fallbackImg) e.currentTarget.src = fallbackImg; }}
+                            />
+                          </div>
+                        </>
+                      );
+                    })()}
                   </div>
                 </div>
               </section>
@@ -244,21 +288,26 @@ function App() {
 
       <footer className="site-footer">
         <div className="container">
-          <div className="footer-address">
-            <p>Laganda Sports Management</p>
-            <p>Eric Perssons väg 5, 217 62 Malmö, Sweden</p>
-            <p>Tel : - +46 40 208 61 22</p>
-            <p>CEO - Robert Hafredal</p>
-            <p>info@lagandasportsmanagement.com</p>
-          </div>
-          <div className="footer-partner">
-            <p>
-              <a href="https://amasportsagency.com/en/" target="_blank" rel="noopener noreferrer">
-                Laganda Sports Management
-              </a>
-            </p>
-            <p>Org. no: 556679-2627</p>
-            <p>VAT: SE556679262701</p>
+          <div className="footer-row">
+            <div className="footer-col footer-company">
+              <p className="footer-title">Laganda Sports Management</p>
+              <address>
+                Eric Perssons väg 5<br />
+                217 62 Malmö, Sweden
+              </address>
+            </div>
+
+            <div className="footer-col footer-contact">
+              <p className="footer-title">Contact</p>
+              <p>Tel: <a href="tel:+46402086122">+46 40 208 61 22</a></p>
+              <p>Email: <a href="mailto:info@lagandasportsmanagement.com">info@lagandasportsmanagement.com</a></p>
+            </div>
+
+            <div className="footer-col footer-legal">
+              <p className="footer-title">Legal</p>
+              <p>Org. no: 556679-2627</p>
+              <p>VAT: SE556679262701</p>
+            </div>
           </div>
           <p className="footer-copy">© Copyright 2015. All Rights Reserved.</p>
         </div>

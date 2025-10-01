@@ -6,16 +6,12 @@ export default function Contact() {
   const handleMailto = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const name = form.elements.name?.value?.trim() || "";
-    const email = form.elements.email?.value?.trim() || "";
     const message = form.elements.message?.value?.trim() || "";
 
     const to = "info@lagandasportsmanagement.com";
-    const subject = encodeURIComponent(
-      `New contact from ${name || "Website User"}`
-    );
+    const subject = encodeURIComponent("New contact (website)");
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n— Sent via Laganda Sports Management website`
+      `Message:\n${message}\n\n(Please note: sender included their name and email in the message)\n— Sent via Laganda Sports Management website`
     );
 
     window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
@@ -35,36 +31,29 @@ export default function Contact() {
                 className="contact-media-img"
                 onLoad={(e) => e.currentTarget.classList.add('loaded')}
               />
+              {/* Contact details under image */}
+              <div className="contact-info">
+                <address>
+                  <strong>Laganda Sports Management</strong><br />
+                  Eric Perssons väg 5<br />
+                  217 62 Malmö, Sweden
+                </address>
+                <p style={{ marginTop: '8px' }}>
+                  Tel: <a href="tel:+46402086122">+46 40 208 61 22</a><br />
+                  Email: <a href="mailto:info@lagandasportsmanagement.com">info@lagandasportsmanagement.com</a>
+                </p>
+              </div>
             </div>
             <div className="contact-form-container">
               <form className="contact-form" onSubmit={handleMailto}>
-                <div className="form-row">
-                  <label htmlFor="name">Name</label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Your name"
-                    required
-                  />
-                </div>
-                <div className="form-row">
-                  <label htmlFor="email">Email</label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="you@example.com"
-                    required
-                  />
-                </div>
+                <p className="muted" style={{ marginBottom: '8px' }}>Include your name and email in the message below.</p>
                 <div className="form-row">
                   <label htmlFor="message">Message</label>
                   <textarea
                     id="message"
                     name="message"
                     rows="6"
-                    placeholder="How can we help?"
+                    placeholder="How can we help? (Please include your name and email)"
                     required
                   />
                 </div>

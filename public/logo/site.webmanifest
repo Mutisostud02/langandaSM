@@ -4,8 +4,8 @@
   "description": "Elite sports management and athlete representation",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1a1a1a",
-  "theme_color": "#1a1a1a",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "/logo/android-chrome-192x192.png",

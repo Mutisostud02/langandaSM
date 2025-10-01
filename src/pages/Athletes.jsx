@@ -52,9 +52,8 @@ export default function Athletes() {
       "wilma-leidhammar",
       "tove-almqvist",
     ]);
-    return [...athletes]
-      .filter((a) => !block.has(toSlug(a.name)))
-      .sort((a, b) => a.name.localeCompare(b.name));
+    // Preserve original order from JSON (no alphabetical sort) so entries can be interleaved.
+    return [...athletes].filter((a) => !block.has(toSlug(a.name)));
   }, [athletes]);
 
   return (

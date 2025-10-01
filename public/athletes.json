@@ -1,5 +1,14 @@
 [
   {
+    "name": "Noah Lyles",
+    "team": "USA Track & Field",
+    "image": "/athletes/noah-lyles.jpg",
+    "achievements": [
+      { "title": "World Championships 2025", "details": "Tokyo – 2x Gold, 1x Silver; cemented dominance in 200m" },
+      { "title": "Career Outlook", "details": "Planning final competitive year between 2028–2032 Olympics; outspoken on sprinting's future" }
+    ]
+  },
+  {
     "name": "Aaron Doucett",
     "team": "",
     "image": "/athletes/aaron-doucett.jpg",
@@ -70,6 +79,17 @@
     ]
   },
   {
+    "name": "Simone Biles",
+    "team": "USA Gymnastics",
+    "image": "/athletes/simone-biles.jpg",
+    "achievements": [
+      { "title": "Olympics – All-Around", "details": "Gold (2016, 2024)" },
+      { "title": "Olympics – Vault", "details": "Gold (2016, 2024)" },
+      { "title": "Olympics – Floor", "details": "Gold (2016); Silver (2024)" },
+      { "title": "Olympics – Balance Beam", "details": "Bronze (2016, 2020)" }
+    ]
+  },
+  {
     "name": "Donald Oliver",
     "team": "",
     "image": "/athletes/donald-oliver.jpg",
@@ -100,6 +120,16 @@
     ]
   },
   {
+    "name": "Sha'Carri Richardson",
+    "team": "USATF",
+    "image": "/athletes/sha'carri-richardson.jpg",
+    "achievements": [
+      { "title": "Olympics", "details": "Debut – Paris 2024" },
+      { "title": "World Championships 2023", "details": "Gold – 100m; Gold – 4x100m relay" },
+      { "title": "Career Note", "details": "Qualified for Tokyo 2020 (did not compete)" }
+    ]
+  },
+  {
     "name": "Konstantin Mishchenko",
     "team": "",
     "image": "/athletes/konstantin-mishchenko.jpg",
@@ -117,6 +147,15 @@
       { "title": "Club Honors", "details": "Cup runner-up 2023" },
       { "title": "International", "details": "U23 national team call-up" },
       { "title": "Individual", "details": "Clinical finisher with double-digit goals" }
+    ]
+  },
+  {
+    "name": "Jahmal Harvey",
+    "team": "USA Boxing",
+    "image": "/athletes/jahmal-harvey.jpg",
+    "achievements": [
+      { "title": "Pan American Games 2023", "details": "Gold (Santiago) – Qualified Paris 2024" },
+      { "title": "Paris 2024", "details": "Won opening bout vs Luiz Gabriel Oliveira (SD)" }
     ]
   },
   {
@@ -190,6 +229,17 @@
     ]
   },
   {
+    "name": "Frederick Richard",
+    "team": "USA Gymnastics",
+    "image": "/athletes/frederick-richard.jpg",
+    "achievements": [
+      { "title": "Olympics 2024 – Team", "details": "Bronze medal (first US men's team medal since 2008)" },
+      { "title": "Olympics 2024 – All-Around", "details": "Finalist – 15th place" },
+      { "title": "Team Final Contributions", "details": "FX 14.466; SR 14.033; PB 14.566; HB 14.833" },
+      { "title": "Worlds 2023 – All-Around", "details": "Bronze; youngest American male world medalist" }
+    ]
+  },
+  {
     "name": "Victoire Joncheray",
     "team": "",
     "image": "/athletes/victoire-joncheray.jpg",
@@ -197,6 +247,17 @@
       { "title": "International", "details": "U23 national team squad" },
       { "title": "Club Honors", "details": "Cup semifinal runs" },
       { "title": "Individual", "details": "Dynamic forward with strong pressing metrics" }
+    ]
+  },
+  {
+    "name": "Naomi Girma",
+    "team": "USWNT",
+    "image": "/athletes/naomi-girma.jpg",
+    "achievements": [
+      { "title": "Olympics 2024", "details": "Gold medal – played every minute; defensive leader" },
+      { "title": "Honors", "details": "U.S. Soccer Female Player of the Year (2023)" },
+      { "title": "Milestone", "details": "First USWNT Olympian of Ethiopian descent" },
+      { "title": "Recognition", "details": "Regarded among the world's best defenders" }
     ]
   },
   {

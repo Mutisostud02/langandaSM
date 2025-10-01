@@ -9,7 +9,7 @@
 
 * {
   margin: 0;
-  font-family: 'Jost', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
 
 }
 
@@ -50,9 +50,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Site styles */
 :root {
-  --bg: #0f1113;
-  --text: #ffffff;
-  --muted: #c9c9c9;
+  --bg: #ffffff;
+  --text: #0f1113;
+  --muted: #3b3f44;
   --accent: #0b5fff; /* brand accent */
   --header-offset: 72px; /* offset for fixed header */
 }
@@ -91,9 +91,9 @@ section { scroll-margin-top: calc(var(--header-offset) + 8px); }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(15,17,19,0.7);
+  background: rgba(238,238,238,0.88);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 .header-inner {
   display: flex;
@@ -111,21 +111,56 @@ section { scroll-margin-top: calc(var(--header-offset) + 8px); }
 .main-nav ul { display: flex; gap: 24px; list-style: none; }
 .main-nav a { color: var(--text); text-decoration: none; opacity: 0.85; letter-spacing: 0.3px; background: transparent; }
 .main-nav a:hover { opacity: 1; }
-.main-nav a:focus, .main-nav a:active { background: transparent; outline: none; box-shadow: none; text-decoration: underline; }
+.main-nav a:focus, .main-nav a:active { background: transparent; outline: none; box-shadow: none; text-decoration: none; }
+.main-nav a:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(11,95,255,0.2); border-radius: 8px; }
 
 /* Remove blue tap highlight on mobile for header nav links */
 .main-nav a { -webkit-tap-highlight-color: transparent; }
 
 .nav-toggle { display:none; }
-.hamburger { display:none; cursor:pointer; }
-.hamburger span { display:block; width:24px; height:2px; background:#fff; margin:5px 0; }
+.hamburger { display:block; cursor:pointer; }
+.hamburger span { display:block; width:24px; height:2px; background:#0f1113; margin:5px 0; }
 
-@media (max-width: 800px) {
-  .hamburger { display:block; }
-  .main-nav { position: fixed; inset: 64px 0 auto 0; background: rgba(15,17,19,0.98); border-top: 1px solid rgba(255,255,255,0.1); transform: translateY(-120%); transition: transform .3s ease; }
-  .main-nav ul { flex-direction: column; padding: 16px; }
-  #nav-toggle:checked ~ .main-nav { transform: translateY(0); }
+/* Dropdown nav for all viewports (anchored to hamburger, right side) */
+.main-nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  background: rgba(255,255,255,0.98);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .2s ease, opacity .2s ease;
+  z-index: 1001;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
 }
+.main-nav ul { flex-direction: column; padding: 12px; }
+#nav-toggle:checked ~ .main-nav { transform: translateY(0); opacity: 1; pointer-events: auto; }
+/* Hover/focus reveal only when on hamburger or menu */
+.hamburger:hover + .main-nav,
+.nav-wrapper:hover .main-nav,
+.main-nav:hover,
+.hamburger:focus + .main-nav { transform: translateY(0); opacity: 1; pointer-events: auto; }
+
+/* Hover bridge between hamburger and dropdown to prevent flicker */
+.nav-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 48px; /* roughly hamburger width */
+  height: 10px; /* small bridge area */
+}
+
+/* Dropdown sizing/appearance */
+.main-nav { min-width: 220px; width: max-content; }
+.main-nav ul { gap: 4px; }
+.main-nav li { list-style: none; }
+.main-nav a { display: block; padding: 8px 12px; border-radius: 8px; transition: color .15s ease, background-color .15s ease; }
+.main-nav a:hover { background: rgba(11,95,255,0.08); color: #0b5fff; }
 
 /* Hero */
 .hero { padding: 64px 0; }
@@ -134,7 +169,7 @@ section { scroll-margin-top: calc(var(--header-offset) + 8px); }
 .athlete-list li { list-style: none; color: var(--muted); }
 
 /* Home hero header */
-.home-hero { padding: 48px 0 28px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.home-hero { padding: 48px 0 28px; background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0)); border-bottom: 1px solid rgba(0,0,0,0.06); }
 .home-hero h1 { font-size: 34px; letter-spacing: 0.2px; }
 .hero-lead { color: var(--muted); margin-top: 8px; max-width: 68ch; }
 .hero-actions { display: flex; gap: 10px; margin-top: 14px; }
@@ -143,7 +178,9 @@ section { scroll-margin-top: calc(var(--header-offset) + 8px); }
 /* Home services strip */
 .home-services { background: #ffffff; color: #0f1113; padding: 28px 0; }
 .home-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.home-service { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.home-service { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.home-service:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.12); border-color: rgba(0,0,0,0.14); }
+.home-service:focus-within { outline: none; box-shadow: 0 0 0 3px rgba(11,95,255,0.15), 0 10px 24px rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.18); }
 .home-service h3 { font-size: 18px; margin-bottom: 6px; color: #0f1113; }
 .home-service p { color: #3b3f44; font-size: 14px; }
 @media (max-width: 900px) { .home-services-grid { grid-template-columns: 1fr; } }
@@ -151,6 +188,26 @@ section { scroll-margin-top: calc(var(--header-offset) + 8px); }
 /* Home athletes CTA */
 .home-athletes-cta { background: #ffffff; color: #0f1113; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.06); }
 .home-cta-row { display: grid; gap: 8px; justify-items: center; text-align: center; }
+.home-cta-row--with-images {
+  grid-template-columns: minmax(220px, 1fr) minmax(260px, auto) minmax(220px, 1fr);
+  align-items: center;
+  gap: 16px;
+}
+.home-cta-center { display: grid; gap: 8px; justify-items: center; text-align: center; padding: 8px 0; }
+.home-cta-img-wrap { display: grid; }
+.home-cta-img { display: block; width: 100%; height: 220px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+
+@media (min-width: 960px) {
+  .home-cta-img { height: 280px; }
+}
+
+@media (max-width: 800px) {
+  .home-cta-row--with-images { grid-template-columns: 1fr; }
+  .home-cta-img { height: 200px; }
+  .home-cta-img-wrap.right { order: 3; }
+  .home-cta-center { order: 2; }
+  .home-cta-img-wrap.left { order: 1; }
+}
 .home-athletes-cta h2 { font-size: 26px; }
 
 /* Home stats strip */
@@ -161,10 +218,11 @@ section { scroll-margin-top: calc(var(--header-offset) + 8px); }
   gap: 2px; 
   align-content: center; 
   text-align: center; 
-  background: rgba(255,255,255,0.04); 
-  border: 1px solid rgba(255,255,255,0.08);
+  background: #ffffff; 
+  border: 1px solid rgba(0,0,0,0.08);
   border-radius: 12px; 
   padding: 16px; 
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 .stat-value { font-size: 18px; font-weight: 700; letter-spacing: 0.3px; }
 .stat-label { color: var(--muted); font-size: 13px; }
@@ -178,9 +236,9 @@ section { scroll-margin-top: calc(var(--header-offset) + 8px); }
   flex-direction: column; 
   gap: 6px; 
   padding: 24px; 
-  border: 1px solid rgba(255,255,255,0.06); 
+  border: 1px solid rgba(0,0,0,0.06); 
   border-radius: 8px; 
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0));
 }
 .hero-slide h2 { font-size: 28px; font-weight: 600; }
 .hero-slide p { color: var(--muted); font-size: 14px; }
@@ -188,7 +246,7 @@ section { scroll-margin-top: calc(var(--header-offset) + 8px); }
 /* Cards */
 .athletes { padding: 48px 0 24px; }
 .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.card { background: #171a1d; border: 1px solid rgba(255,255,255,0.06); padding: 20px; border-radius: 8px; }
+.card { background: #ffffff; border: 1px solid rgba(0,0,0,0.1); padding: 20px; border-radius: 8px; }
 .card h3 { font-size: 18px; margin-bottom: 8px; }
 .card p { color: var(--muted); font-size: 14px; }
 @media (max-width: 1000px) {
@@ -207,23 +265,41 @@ section { scroll-margin-top: calc(var(--header-offset) + 8px); }
 .button--primary:hover { filter: brightness(0.96); }
 
 /* Contact */
-.contact { padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+.contact { padding: 48px 0; border-top: 1px solid rgba(0,0,0,0.08); }
 .contact h2 { font-size: 28px; margin-bottom: 16px; letter-spacing: 0.2px; }
 .contact-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
 address { color: var(--muted); font-style: normal; }
+.contact-info a { color: inherit; text-decoration: none; }
+.contact-info a:hover, .contact-info a:focus { color: inherit; text-decoration: none; outline: none; }
 
 /* Footer */
-.site-footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 16px 0; color: var(--muted); }
-.site-footer .container { display: grid; gap: 8px; align-items: start; }
+.site-footer { background: #eeeeee; border-top: 1px solid rgba(0,0,0,0.1); padding: 16px 0; color: var(--muted); }
+.site-footer .container { display: block; }
 .site-footer a { color: var(--muted); text-decoration: none; }
-.site-footer a:hover, .site-footer a:focus { color: #ffffff; text-decoration: underline; outline: none; }
+.site-footer a:hover, .site-footer a:focus { color: #0f1113; text-decoration: underline; outline: none; }
 
 @media (min-width: 800px) {
-  .site-footer .container { grid-template-columns: 1fr 1fr; }
+  /* no-op: footer uses flex via .footer-row */
 }
 
 /* Fine-tune headings */
 .athletes h2, .contact h2 { letter-spacing: 0.2px; }
+
+/* Footer layout */
+.footer-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: flex-start; padding: 12px 0; }
+.footer-col { min-width: 200px; }
+.footer-title { font-weight: 600; color: #0f1113; margin-bottom: 6px; }
+.footer-company address { color: var(--muted); font-style: normal; line-height: 1.5; }
+.footer-contact { text-align: center; }
+.footer-contact p, .footer-legal p { margin: 2px 0; }
+.footer-legal { text-align: right; }
+
+@media (max-width: 800px) {
+  .footer-row { display: flex; flex-direction: column; gap: 12px; }
+  .footer-col { min-width: 0; }
+  .footer-contact { text-align: left; }
+  .footer-legal { text-align: left; }
+}
 
 /* Placeholder hero backgrounds */
 .hero-bg { position: relative; min-height: 280px; display: grid; align-items: end; border: none; padding: 0; overflow: hidden; border-radius: 12px; }
@@ -261,8 +337,8 @@ address { color: var(--muted); font-style: normal; }
 /* Swiper navigation and pagination styles */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.3);
+  color: #0f1113;
+  background: rgba(0, 0, 0, 0.08);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -271,7 +347,7 @@ address { color: var(--muted); font-style: normal; }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.16);
 }
 
 .swiper-button-next::after,
@@ -280,12 +356,12 @@ address { color: var(--muted); font-style: normal; }
 }
 
 .swiper-pagination-bullet {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.25);
   opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background: #ffffff;
+  background: #0f1113;
 }
 
 @media (min-width: 800px) {
@@ -299,15 +375,15 @@ address { color: var(--muted); font-style: normal; }
 .page-title { font-size: 32px; margin: 12px 0 16px; }
 .athletes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .athletes-grid.athletes-grid--cards { grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.athlete-card { background: #171a1d; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; text-decoration: none; color: inherit; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
-.athlete-card--grid { display: grid; grid-template-rows: 1fr auto; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); }
-.athlete-card--grid:hover { transform: translateY(-3px); box-shadow: 0 16px 42px rgba(0,0,0,0.35); border-color: rgba(255,255,255,0.18); }
+.athlete-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; text-decoration: none; color: inherit; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.athlete-card--grid { display: grid; grid-template-rows: 1fr auto; background: #ffffff; border: 1px solid rgba(0,0,0,0.08); }
+.athlete-card--grid:hover { transform: translateY(-3px); box-shadow: 0 16px 42px rgba(0,0,0,0.35); border-color: rgba(0,0,0,0.18); }
 .athlete-photo { position: relative; height: 240px; overflow: hidden; }
 .athlete-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1); transition: transform .35s ease; }
 .athlete-card--grid:hover .athlete-photo img { transform: scale(1.05); }
 .athlete-img { object-fit: cover; }
 .athlete-img--april-laugh { object-position: top center; }
-.athlete-meta { padding: 12px 14px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); border-top: 1px solid rgba(255,255,255,0.06); }
+.athlete-meta { padding: 12px 14px; background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0)); border-top: 1px solid rgba(0,0,0,0.06); }
 .athlete-meta h2 { font-size: 16px; margin: 0 0 4px; letter-spacing: 0.2px; }
 .athlete-team { color: var(--muted); font-size: 13px; }
 .athlete-achievements-card { display: grid; gap: 4px; margin-top: 6px; }
@@ -331,12 +407,25 @@ address { color: var(--muted); font-style: normal; }
 .about-page h1 { font-size: 28px; margin-bottom: 8px; }
 .about-page h2 { font-size: 22px; margin-bottom: 12px; color: #3b3f44; }
 .about-page p { margin: 10px 0; color: #0f1113; max-width: 70ch; }
-.about-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; align-items: start; }
-.about-media-img { width: 100%; height: 340px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+.about-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 24px; align-items: start; }
+.about-media-img { width: 100%; height: 442px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+/* Spacing between images and content on About page */
+.about-text .about-media-img { margin: 16px 0 24px; }
+.about-media .about-below { margin-top: 28px; }
+/* Split section under the hero to place content to the right of the image */
+.about-info-split { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; margin-top: 12px; }
+.about-info-img { width: 460px; max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
 @media (max-width: 900px) {
   .about-layout { grid-template-columns: 1fr; }
   .about-media-img { height: 240px; }
+  .about-text .about-media-img { margin: 12px 0 20px; }
+  .about-media .about-below { margin-top: 22px; }
+  .about-info-split { grid-template-columns: 1fr; }
+  .about-info-img { width: 100%; height: auto; }
 }
+
+/* About page CTA buttons spacing */
+.about-actions { display: inline-flex; gap: 8px; }
 
 /* Services page */
 .services-page { background: #ffffff; color: #0f1113; }
@@ -520,12 +609,12 @@ address { color: var(--muted); font-style: normal; }
 
 .logo-text {
   font-weight: 700;
-  color: #fff;
+  color: #0f1113;
 }
 
 /* Header improvements */
 .site-header {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(238,238,238,0.9);
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
@@ -542,7 +631,10 @@ address { color: var(--muted); font-style: normal; }
   align-items: center;
   min-height: var(--header-offset);
   padding: 0.5rem 0;
+  position: relative;
 }
+.site-header .container { width: min(1400px, 98%); }
+.nav-wrapper { position: relative; display: inline-block; }
 
 /* Responsive logo */
 @media (max-width: 768px) {
