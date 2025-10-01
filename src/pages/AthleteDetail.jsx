@@ -43,7 +43,16 @@ export default function AthleteDetail() {
   }, []);
 
   const athlete = useMemo(
-    () => athletes.find((a) => toSlug(a.name) === slug),
+    () => {
+      const blocked = new Set([
+        "adam-carlen",
+        "alva-selerud",
+        "wilma-leidhammar",
+        "tove-almqvist",
+      ]);
+      if (blocked.has(slug)) return undefined;
+      return athletes.find((a) => toSlug(a.name) === slug);
+    },
     [athletes, slug]
   );
 
@@ -101,6 +110,7 @@ export default function AthleteDetail() {
                   onError={(e) => {
                     e.currentTarget.style.opacity = 0.5;
                   }}
+                  className={`athlete-img ${toSlug(athlete.name) === 'april-laugh' ? 'athlete-img--april-laugh' : ''}`}
                 />
               </div>
             </div>

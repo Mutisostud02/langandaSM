@@ -1,4 +1,8 @@
 export default function Contact() {
+  function withBase(path) {
+    const base = (import.meta?.env?.BASE_URL || "/").replace(/\/$/, "/");
+    return `${base}${String(path).replace(/^\//, "")}`;
+  }
   const handleMailto = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -22,7 +26,16 @@ export default function Contact() {
       <section className="contact">
         <div className="container">
           <h1>Contact</h1>
-          <div className="contact-main-layout">
+          <div className="contact-flex">
+            <div className="contact-media">
+              <img
+                src={withBase('/athletes/claudio-schwarz-head.jpg')}
+                alt="Contact visual"
+                loading="lazy"
+                className="contact-media-img"
+                onLoad={(e) => e.currentTarget.classList.add('loaded')}
+              />
+            </div>
             <div className="contact-form-container">
               <form className="contact-form" onSubmit={handleMailto}>
                 <div className="form-row">

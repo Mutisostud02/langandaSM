@@ -305,6 +305,8 @@ address { color: var(--muted); font-style: normal; }
 .athlete-photo { position: relative; height: 240px; overflow: hidden; }
 .athlete-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1); transition: transform .35s ease; }
 .athlete-card--grid:hover .athlete-photo img { transform: scale(1.05); }
+.athlete-img { object-fit: cover; }
+.athlete-img--april-laugh { object-position: top center; }
 .athlete-meta { padding: 12px 14px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); border-top: 1px solid rgba(255,255,255,0.06); }
 .athlete-meta h2 { font-size: 16px; margin: 0 0 4px; letter-spacing: 0.2px; }
 .athlete-team { color: var(--muted); font-size: 13px; }
@@ -329,9 +331,24 @@ address { color: var(--muted); font-style: normal; }
 .about-page h1 { font-size: 28px; margin-bottom: 8px; }
 .about-page h2 { font-size: 22px; margin-bottom: 12px; color: #3b3f44; }
 .about-page p { margin: 10px 0; color: #0f1113; max-width: 70ch; }
+.about-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; align-items: start; }
+.about-media-img { width: 100%; height: 340px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; }
+  .about-media-img { height: 240px; }
+}
 
 /* Services page */
 .services-page { background: #ffffff; color: #0f1113; }
+.services-hero { position: relative; padding: 0; }
+.services-hero-bg { position: relative; min-height: 380px; background: #0f1113 center/cover no-repeat; }
+.services-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0.65) 100%); display: grid; align-items: end; padding-bottom: 28px; }
+.services-hero h1 { color: #fff; font-size: 36px; }
+.services-hero-sub { color: #f1f1f1; margin-top: 6px; }
+@media (max-width: 768px) {
+  .services-hero-bg { min-height: 260px; }
+  .services-hero h1 { font-size: 30px; }
+}
 .services-page .services { padding: 32px 0 24px; }
 .services-page h1 { font-size: 28px; margin-bottom: 8px; }
 .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
@@ -386,6 +403,14 @@ address { color: var(--muted); font-style: normal; }
 .contact-page .director-media img { width: 50%; height: 100px; }
 .contact-page .arena-card img { height: 180px; }
 
+/* New contact flex layout with image */
+.contact-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-top: 16px; }
+.contact-media-img { width: 100%; height: 360px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+@media (max-width: 900px) {
+  .contact-flex { grid-template-columns: 1fr; }
+  .contact-media-img { height: 240px; }
+}
+
 @media (max-width: 900px) {
   .contact-page .contact-main-layout { flex-direction: column; gap: 24px; }
   .contact-page .image-cards-sidebar { flex: none; width: 100%; }
@@ -435,6 +460,7 @@ address { color: var(--muted); font-style: normal; }
 .athlete-detail-card { display: grid; grid-template-columns: 340px 1fr; gap: 20px; align-items: start; background: #fff; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 6px 24px rgba(0,0,0,0.12); border-radius: 12px; padding: 20px; }
 .athlete-detail-media { height: 320px; border-radius: 10px; overflow: hidden; }
 .athlete-detail-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.athlete-detail-media .athlete-img--april-laugh { object-position: top center; }
 .athlete-detail-info h1 { font-size: 26px; margin-bottom: 4px; }
 .athlete-detail-info .athlete-discipline { color: #3b3f44; margin-bottom: 12px; }
 .athlete-detail-head .athlete-flag { font-size: 30px; }

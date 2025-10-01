@@ -5,8 +5,33 @@ export default function Services() {
   const pageDesc =
     "End-to-end athlete management: event placement, sponsorships, media, medical support, travel logistics, and brand building.";
 
+  function withBase(path) {
+    const base = (import.meta?.env?.BASE_URL || "/").replace(/\/$/, "/");
+    return `${base}${String(path).replace(/^\//, "")}`;
+  }
+
   return (
     <main className="services-page">
+      {/* Hero header with head image */}
+      <section className="services-hero">
+        <div
+          className="services-hero-bg"
+          style={{
+            backgroundImage: `url(${withBase('/athletes/girish-sangammanavar-head.jpg')})`,
+          }}
+        >
+          <div className="services-hero-overlay">
+            <div className="container">
+              <h1>Services</h1>
+              <p className="services-hero-sub">Elite, personal, and global. We manage the details so athletes can focus on performance.</p>
+              <div className="section-actions">
+                <a className="button button--primary" href="/contact">Talk to us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <SEO
         title={pageTitle}
         description={pageDesc}
@@ -17,15 +42,7 @@ export default function Services() {
 
       <section className="services">
         <div className="container">
-          <header className="section-header">
-            <h1>Services</h1>
-            <p className="section-subtitle">
-              Elite, personal, and global. We manage the details so athletes can focus on performance.
-            </p>
-            <div className="section-actions">
-              <a className="button button--primary" href="/contact">Talk to us</a>
-            </div>
-          </header>
+          {/* Removed duplicate header (title, subtitle, CTA) per request */}
 
           <div className="services-grid">
             <article className="service-card">

@@ -46,7 +46,15 @@ export default function Athletes() {
     "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop";
 
   const filtered = useMemo(() => {
-    return [...athletes].sort((a, b) => a.name.localeCompare(b.name));
+    const block = new Set([
+      "adam-carlen",
+      "alva-selerud",
+      "wilma-leidhammar",
+      "tove-almqvist",
+    ]);
+    return [...athletes]
+      .filter((a) => !block.has(toSlug(a.name)))
+      .sort((a, b) => a.name.localeCompare(b.name));
   }, [athletes]);
 
   return (
@@ -84,6 +92,7 @@ export default function Athletes() {
                       onError={(e) => {
                         if (e.currentTarget.src !== fallbackImg) e.currentTarget.src = fallbackImg;
                       }}
+                      className={`athlete-img ${slug === "april-laugh" ? "athlete-img--april-laugh" : ""}`}
                     />
                   </div>
                   <div className="athlete-meta">
