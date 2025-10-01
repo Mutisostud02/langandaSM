@@ -295,7 +295,7 @@ address { color: var(--muted); font-style: normal; }
 .footer-col { min-width: 200px; }
 .footer-title { font-weight: 600; color: #0f1113; margin-bottom: 6px; }
 .footer-company address { color: var(--muted); font-style: normal; line-height: 1.5; }
-.footer-contact { text-align: center; }
+.footer-contact { text-align: right; }
 .footer-contact p, .footer-legal p { margin: 2px 0; }
 .footer-legal { text-align: right; }
 
@@ -490,7 +490,7 @@ address { color: var(--muted); font-style: normal; }
 .contact-page h1 { font-size: 28px; margin-bottom: 16px; animation: fadeInUp 0.8s ease-out; }
 .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
 .contact-page .contact-layout { grid-template-columns: 1fr; }
-.contact-page .contact .container { width: min(1430px, 95%); }
+.contact-page .contact .container { width: min(1400px, 98%); }
 .contact-page .contact-main-layout { display: flex; gap: 48px; align-items: flex-start; margin-top: 24px; }
 .contact-page .image-cards-sidebar { flex: 0 0 300px; }
 .contact-page .contact-form-container { flex: 1; }
@@ -501,14 +501,14 @@ address { color: var(--muted); font-style: normal; }
 /* Improve CEO image crop to keep face fully visible */
 .contact-page .ceo-card .director-media img { object-position: top center; height: 140px; }
 
-/* CEO card alignment under heading with reasonable max width */
+/* CEO card alignment under heading with previous compact width, left aligned */
 .contact-page .ceo-card { width: 100%; max-width: 520px; margin-inline: 0; }
 @media (max-width: 900px) {
   .contact-page .ceo-card { width: 100%; }
 }
 
-/* New contact flex layout with image */
-.contact-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-top: 16px; }
+/* New contact flex layout - stretch message form column */
+.contact-flex { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 24px; align-items: start; margin-top: 16px; }
 .contact-media-img { width: 100%; height: 360px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
 @media (max-width: 900px) {
   .contact-flex { grid-template-columns: 1fr; }

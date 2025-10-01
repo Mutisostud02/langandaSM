@@ -262,16 +262,13 @@ function App() {
               </address>
             </div>
 
+            {/* spacer to keep 3-column grid and push contact to right */}
+            <div className="footer-col" aria-hidden="true"></div>
+
             <div className="footer-col footer-contact">
               <p className="footer-title">Contact</p>
               <p>Tel: <a href="tel:+46402086122">+46 40 208 61 22</a></p>
               <p>Email: <a href="mailto:info@lagandasportsmanagement.com">info@lagandasportsmanagement.com</a></p>
-            </div>
-
-            <div className="footer-col footer-legal">
-              <p className="footer-title">Legal</p>
-              <p>Org. no: 556679-2627</p>
-              <p>VAT: SE556679262701</p>
             </div>
           </div>
           <p className="footer-copy">© Copyright 2015. All Rights Reserved.</p>
