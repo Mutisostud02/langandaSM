@@ -76,12 +76,12 @@ function App() {
         <div className="container header-inner">
           <Link className="logo" to="/">
             <img
-              src="/logo/android-chrome-192x192.png"
+              src="/logo/android-chrome-512x512.png"
               alt="Laganda Sports Management Logo"
               className="logo-img"
               loading="lazy"
-              width="40"
-              height="40"
+              width="56"
+              height="56"
             />
             <span className="logo-text">Laganda Sports Management</span>
           </Link>

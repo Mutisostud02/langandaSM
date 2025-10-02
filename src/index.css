@@ -54,7 +54,8 @@ h1, h2, h3, h4, h5, h6 {
   --text: #0f1113;
   --muted: #3b3f44;
   --accent: #0b5fff; /* brand accent */
-  --header-offset: 72px; /* offset for fixed header */
+  --header-offset: 80px; /* increased from 72px */
+  --header-bg: rgba(255,255,255,0.95); /* more solid background */
 }
 @media (max-width: 768px) {
   :root { --header-offset: 64px; }
@@ -101,14 +102,12 @@ section { scroll-margin-top: calc(var(--header-offset) + 8px); }
   justify-content: space-between;
   padding: 18px 0;
 }
-.logo {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
 }
-
-.main-nav ul { display: flex; gap: 24px; list-style: none; }
 .main-nav a { color: var(--text); text-decoration: none; opacity: 0.85; letter-spacing: 0.3px; background: transparent; }
 .main-nav a:hover { opacity: 1; }
 .main-nav a:focus, .main-nav a:active { background: transparent; outline: none; box-shadow: none; text-decoration: none; }
@@ -604,33 +603,38 @@ address { color: var(--muted); font-style: normal; }
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   text-decoration: none;
   color: inherit;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
 }
 
 .logo-img {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: rgba(0,0,0,0.9);
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  padding: 4px;
+  border: 2px solid rgba(0,0,0,0.9);
 }
 
 .logo:hover .logo-img {
-  transform: scale(1.05);
 }
 
 .logo-text {
   font-weight: 700;
   color: #0f1113;
+  white-space: nowrap;
 }
 
 /* Header improvements */
 .site-header {
-  background: rgba(238,238,238,0.9);
-  backdrop-filter: blur(10px);
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
   position: fixed;
   top: 0;
   left: 0;
@@ -638,6 +642,8 @@ address { color: var(--muted); font-style: normal; }
   z-index: 1000;
   transition: all 0.3s ease;
   height: var(--header-offset);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .header-inner {
@@ -645,7 +651,7 @@ address { color: var(--muted); font-style: normal; }
   justify-content: space-between;
   align-items: center;
   min-height: var(--header-offset);
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   position: relative;
 }
 .site-header .container { width: min(1400px, 98%); }
