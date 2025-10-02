@@ -684,8 +684,8 @@ img {
 
 /* (theme toggle removed) */
 
-/* Lazy loading for images - exclude logo and athlete images */
-img[loading="lazy"]:not(.logo-img):not(.athlete-img) {
+/* Lazy loading for images - exclude logo, athlete images, about page images, and contact page images */
+img[loading="lazy"]:not(.logo-img):not(.athlete-img):not(.about-media-img):not(.director-media img) {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -694,9 +694,11 @@ img[loading="lazy"].loaded {
   opacity: 1;
 }
 
-/* Ensure logo and athlete images are always visible */
+/* Ensure logo, athlete images, about page images, and contact page images are always visible */
 .logo-img,
-.athlete-img {
+.athlete-img,
+.about-media-img,
+.director-media img {
   opacity: 1 !important;
 }
 
